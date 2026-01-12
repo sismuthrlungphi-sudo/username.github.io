@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>LavaShop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #5f2cff, #00c3ff);
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.2);
+}
+
+.shop {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.product {
+  background: rgba(0,0,0,0.35);
+  border-radius: 16px;
+  width: 320px;
+  padding: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.product h2 {
+  margin: 12px 0 6px;
+  font-size: 20px;
+}
+
+.price {
+  color: #00ffea;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00e1ff, #7f00ff);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.notice {
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: #111;
+  border-radius: 14px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.popup-box h3 {
+  margin-top: 0;
+  color: #00e1ff;
+}
+</style>
+</head>
+
+<body>
+
+<header>🔥 LavaShop 🔥</header>
+
+<div class="shop">
+  <div class="product">
+    <img src="https://cdn.discordapp.com/attachments/1455447435982929973/1460199408711762054/Screenshot_20260112-161049.jpg">
+    <h2>ไฟล์ยิงตัวขึ้นหัว Android</h2>
+    <div class="price">ราคา 80 บาท</div>
+    <button onclick="openBuy()">สั่งซื้อสินค้า</button>
+    <div class="notice">
+      หลังวางซองอั่งเปาแล้ว<br>
+      ระบบจะยืนยันให้ภายหลัง
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h3>ขั้นตอนการสั่งซื้อ</h3>
+    <p>1️⃣ วางซองอั่งเปา<br>จำนวน <b>80 บาท</b></p>
+    <p>2️⃣ แคปหลักฐานการโอน</p>
+    <p>3️⃣ รอรับสินค้า</p>
+    <button onclick="closeBuy()">เข้าใจแล้ว</button>
+  </div>
+</div>
+
+<script>
+function openBuy() {
+  document.getElementById("popup").style.display = "flex";
+}
+function closeBuy() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
